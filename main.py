@@ -5,9 +5,8 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 import requests
-
-API_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmOGEyNTQ1YmU3NTMwOGUzYjc3OGRmYjZlZWRiZDgyMSIsInN1YiI6IjYyZTVmMjMyYmQ1ODhi" \
-          "MDA1OTAxZDEwOCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.rW5LlXzppccr-IHE7K9rALiGuBqaAWsXeT_DYFRXasg"
+import os
+API_TOKEN = os.environ.get("API_TOKEN")
 API_URL = 'https://api.themoviedb.org/3'
 headers = {
     'Authorization': f'Bearer {API_TOKEN}',
